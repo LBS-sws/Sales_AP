@@ -179,7 +179,7 @@ class ReportRankinglistForm extends CReportForm
                 //总金额
                 $money=0;
                 foreach ($sum as $b){
-                    $sql3="select field_id, field_value from sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') and visit_id = '".$b['id']."'";
+                    $sql3="select field_id, field_value from sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and visit_id = '".$b['id']."'";
                     $array = Yii::app()->db->createCommand($sql3)->queryAll();
                     $summoney = 0;
                     foreach($array as $item){
