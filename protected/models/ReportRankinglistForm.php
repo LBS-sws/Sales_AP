@@ -105,7 +105,7 @@ class ReportRankinglistForm extends CReportForm
        // $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         foreach ($cities as $code=>$name) {
             $sum_arr = array();
-            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$code."'")===false) {
+            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/","'".$code."'")===false) {
                 $sql = "select a.name as city_name, b.name as region_name 
 						from security$suffix.sec_city a
 						left outer join security$suffix.sec_city b on a.region=b.code
@@ -155,7 +155,7 @@ class ReportRankinglistForm extends CReportForm
         $cities = General::getCityListWithNoDescendant();
      //   $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         foreach ($cities as $code=>$name) {
-            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$code."'")===false) {
+            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/","'".$code."'")===false) {
                 $sql = "select a.name as city_name, b.name as region_name 
 						from security$suffix.sec_city a
 						left outer join security$suffix.sec_city b on a.region=b.code
