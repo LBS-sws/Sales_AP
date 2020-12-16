@@ -33,7 +33,7 @@ class CusttypeList extends CListPageModel
 			$svalue = str_replace("'","\'",$this->searchValue);
 			switch ($this->searchField) {
 				case 'name':
-					$clause .= General::getSqlConditionClause('name',$svalue);
+					$clause .= General::getSqlConditionClause('a.name',$svalue);
 					break;
 				case 'type_group':
 					$t = "(select case a.type_group

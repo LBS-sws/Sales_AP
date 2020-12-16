@@ -48,7 +48,7 @@
 </div>
 
 <?php
-$link = Yii::app()->createAbsoluteUrl("site/notify");
+$link = Yii::app()->createAbsoluteUrl("dashboard/notify");
 $imgpath = Yii::app()->baseUrl."/images/cmpy_small.jpg";
 $js = <<<EOF
 function refreshNotification() {

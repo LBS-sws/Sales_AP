@@ -1,12 +1,13 @@
 <?php
 class PerformanceCommand extends CConsoleCommand
 {
-    public function run()
+    public function run($args)
     {
-        $month=date('m');
-        $year=date('Y');
-        $day=date('d');
-        if($day=='01'){
+	$date = empty($args) ? date('Y-m-d') : $args[0];
+        $month=date('m', strtotime($date));
+        $year=date('Y', strtotime($date));
+        $day=date('d', strtotime($date));
+//        if($day=='01'){
             $suffix = Yii::app()->params['envSuffix'];
             $sql="select a.code
 				from security$suffix.sec_city a left outer join security$suffix.sec_city b on a.code=b.region 
@@ -37,7 +38,7 @@ class PerformanceCommand extends CConsoleCommand
                     $command=Yii::app()->db->createCommand($sql)->execute();
                 }
             }
-        }
+//        }
 
     }
 }

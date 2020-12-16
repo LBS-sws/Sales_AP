@@ -19,6 +19,7 @@ return array(
 'Quiz'=>'培訓測驗系統',
 'Academic Credit'=>'學分系統',
 'Online Library'=>'網上文庫',
+'Charitable Credit'=>'慈善分系統',
 
 'System Use'=>'系統使用',
 
@@ -38,7 +39,7 @@ return array(
 'Customer District'=>'客戶區域',
 'Sale Staff'=>'銷售個人數據匯總',
 'Sales transfer'=>'離職銷售人員數據轉移 ',
-
+'Commission integral'=>'销售提成積分表',
 'Report'=>'報表',
 // 'Operation Daily Report'=>'每日營業擇要報告',
 'Report Manager'=>'報表管理員',
@@ -58,6 +59,7 @@ return array(
 'Web Push Notification'=>'網頁推送通知',
 'Sales List'=>'銷售排行榜單',
 'Signature details email'=>'簽單明細電郵',
+'Integarl (Read All)'=>'積分表 (全部閱讀)',
 
 'User'=>'帳戶',
 'Group'=>'群組',
@@ -80,6 +82,7 @@ return array(
 'Sales lead'=>'銷售簽單業績分類匯總',
 'Sales ranking list'=>'銷售排行榜歷史記錄查看',
 'Performance Objectives'=>'跨區業績目標',
+'Sales Target'=>'銷售目標',
 
 'Pending'=>'等候',
 'In Progress'=>'進行中',

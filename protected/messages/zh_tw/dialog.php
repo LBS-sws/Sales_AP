@@ -64,8 +64,21 @@ return array(
 'Exceeds file upload limit.'=>'超出文件上傳限制。 ',
 'Mark read for all selected records?'=>'列表上的所有記錄標記為已讀？',
 'Mark Read Done'=>'標記已讀完成',
-    'Please check the assigned person and information'=>'請選擇人員或者單數',
-    'Zhu1'=>'1.未分商業和餐飲組的地區只需填寫跨區和被跨區提成比例，商業和餐飲則填寫為0',
-    'Zhu2'=>'2.分組的地區只需填寫商業和餐飲跨區提成比例，跨區和被跨區則填寫為0',
+'Please check the assigned person and information'=>'請選擇人員或者單數',
+'Zhu1'=>'1.未分商業和餐飲組的地區只需填寫跨區和被跨區提成比例，商業和餐飲則填寫為0',
+'Zhu2'=>'2.分組的地區只需填寫商業和餐飲跨區提成比例，跨區和被跨區則填寫為0',
+'Zhu_Integral'=>'   <table>
+                <tr><td>綜合提成分數</td><td>服務/產品提成點數</td></tr>
+                <tr><td><= 10</td><td>-1%</td></tr>
+                <tr><td><= 20</td><td>-0.5%</td></tr>
+                <tr><td><= 30</td><td>0%</td></tr>
+                <tr><td><= 80</td><td>1%</td></tr>
+                <tr><td>> 80</td><td>2%</td></tr>
+            </table>  ',
+'Zhu'=>'注:<br/>
+1. 銷售拜訪表平均低於每月200條,當月總積分視為0分。即當月最終提成點數扣1%。<br/>
+2. 參與同事為副經理和以下級別的銷售部同事。
+',
 );
+
 ?>

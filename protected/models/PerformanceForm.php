@@ -14,6 +14,10 @@ class PerformanceForm extends CFormModel
     public $month;
     public $spanning;
     public $otherspanning;
+    public $business_spanning;
+    public $business_otherspanning;
+    public $restaurant_spanning;
+    public $restaurant_otherspanning;
 
 	/**
 	 * Declares customized attribute labels.
@@ -33,6 +37,10 @@ class PerformanceForm extends CFormModel
             'month'=>Yii::t('code','Month'),
             'spanning'=>Yii::t('code','Spanning'),
             'otherspanning'=>Yii::t('code','Otherspanning'),
+            'business_spanning'=>Yii::t('code','Business_Spanning'),
+            'business_otherspanning'=>Yii::t('code','Business_Otherspanning'),
+            'restaurant_spanning'=>Yii::t('code','Restaurant_Spanning'),
+            'restaurant_otherspanning'=>Yii::t('code','Restaurant_Otherspanning'),
 		);
 	}
 
@@ -43,7 +51,7 @@ class PerformanceForm extends CFormModel
 	{
 		return array(
 			array('','required'),
-			array('id,rpt_type,sums,spanning,otherspanning','safe'),
+			array('id,rpt_type,sums,spanning,otherspanning,business_spanning,business_otherspanning,restaurant_spanning,restaurant_otherspanning','safe'),
 		);
 	}
 
@@ -60,6 +68,10 @@ class PerformanceForm extends CFormModel
             $this->sums = $row['sums'];
             $this->spanning = $row['spanning'];
             $this->otherspanning = $row['otherspanning'];
+            $this->business_spanning = $row['business_spanning'];
+            $this->business_otherspanning = $row['business_otherspanning'];
+            $this->restaurant_spanning = $row['restaurant_spanning'];
+            $this->restaurant_otherspanning = $row['restaurant_otherspanning'];
 		}
 		return true;
 	}
@@ -95,7 +107,11 @@ class PerformanceForm extends CFormModel
 					sum = :sum, 	
 					sums = :sums, 	
 					spanning = :spanning,
-					otherspanning = :otherspanning,		  
+					otherspanning = :otherspanning,	
+					business_spanning = :business_spanning,
+					business_otherspanning = :business_otherspanning,		
+					restaurant_spanning = :restaurant_spanning,
+					restaurant_otherspanning = :restaurant_otherspanning,			  
 					luu = :luu
 					where id = :id";
 				break;
@@ -114,6 +130,14 @@ class PerformanceForm extends CFormModel
             $command->bindParam(':spanning',$this->spanning,PDO::PARAM_STR);
         if (strpos($sql,':otherspanning')!==false)
             $command->bindParam(':otherspanning',$this->otherspanning,PDO::PARAM_STR);
+        if (strpos($sql,':business_spanning')!==false)
+            $command->bindParam(':business_spanning',$this->business_spanning,PDO::PARAM_STR);
+        if (strpos($sql,':business_otherspanning')!==false)
+            $command->bindParam(':business_otherspanning',$this->business_otherspanning,PDO::PARAM_STR);
+        if (strpos($sql,':restaurant_spanning')!==false)
+            $command->bindParam(':restaurant_spanning',$this->restaurant_spanning,PDO::PARAM_STR);
+        if (strpos($sql,':restaurant_otherspanning')!==false)
+            $command->bindParam(':restaurant_otherspanning',$this->restaurant_otherspanning,PDO::PARAM_STR);
 		if (strpos($sql,':type_group')!==false)
 			$command->bindParam(':type_group',$this->type_group,PDO::PARAM_INT);
 		if (strpos($sql,':rpt_type')!==false)

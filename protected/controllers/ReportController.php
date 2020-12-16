@@ -237,11 +237,14 @@ class ReportController extends Controller
             }else{
                 $model['one']=array();
             }
+            $this->render('fenxi',array('model'=>$model,'fenxi'=>$fenxi));
+        }else{
+            Dialog::message(Yii::t('dialog','Warning'), Yii::t('dialog','Unable to open this record. Maybe you don\'t have corresponding access right.'));
+            $this->actionVisit();
         }
-
 //        print_r('<pre/>');
 //       print_r($fenxi);
-       $this->render('fenxi',array('model'=>$model,'fenxi'=>$fenxi));
+
     }
 
     public function actionXiaZai(){
@@ -257,7 +260,7 @@ class ReportController extends Controller
             }
 
             $city_allow = City::model()->getDescendantList($arr['city']);
-            if(!empty($city_allow)||!empty($fenxi['sale'])){
+            if(!empty($city_allow)||!empty($arr['sale'])){
                 $model['one']=$model->fenxiones($arr);
             }else{
                 $model['one']=array();

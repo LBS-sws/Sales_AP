@@ -8,10 +8,15 @@ return array(
 	'Type'=>'类别',
     'Year'=>'年',
     'Month'=>'月',
+    'Sale_day'=>'上班天数',
     'Sum'=>'本月业绩目标单数',
     'Sums'=>'本月业绩目标金额',
     'Spanning'=>'跨区提成比例',
     'Otherspanning'=>'被跨区提成比例',
+    'Business_Spanning'=>'商业跨区提成比例',
+    'Business_Otherspanning'=>'商业被跨区提成比例',
+    'Restaurant_Spanning'=>'餐饮跨区提成比例',
+    'Restaurant_Otherspanning'=>'餐饮被跨区提成比例',
 	
 	'Visit Type'=>'拜访类型',
 	'Visit Type List'=>'拜访类型列表',
@@ -32,5 +37,13 @@ return array(
     'Performance'=>'跨区业绩目标',
     'Performance List'=>'跨区业绩目标列表',
     'Performance Form'=>'跨区业绩目标表单',
+
+    'Integral'=>'销售提成积分',
+    'Integral List'=>'销售提成积分列表',
+    'Integral Form'=>'销售提成积分表单',
+
+    'Target'=>'销售目标',
+    'Target List'=>'销售目标列表',
+    'Target Form'=>'销售目标表单',
 );
 ?>

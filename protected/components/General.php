@@ -164,7 +164,6 @@ class General {
 				'O'=>Yii::t('trans','Others')
 			);
 	}
-
 	
 	public static function getJsDefaultAccountList()
 	{

@@ -53,9 +53,16 @@ class RptRenewalReminder extends CReport {
 		$recipient = array();
 		
 		$director = $this->getArrayDirector($city);
+var_dump($director);
+
 		$mgr = City::model()->findByPk($city)->incharge;
+var_dump($mgr);
+
 		$staff = $this->getArrayStaff($city, array_merge((array)$mgr, $director));
+var_dump($staff);
+
 		$sales = $this->getArraySales();
+var_dump($sales);
 		
 		if ($days <= 10) {
 			$recipient = array_merge($director, (array)$mgr);
@@ -64,7 +71,8 @@ class RptRenewalReminder extends CReport {
 		} else {
 			$recipient = array_merge($sales, $staff);
 		}
-		
+var_dump($recipient);		
+
 		$to = General::getEmailByUserIdArray($recipient);
 		$to = General::dedupToEmailList($to);
 // Remove Joe Yiu from to address
@@ -103,6 +111,7 @@ class RptRenewalReminder extends CReport {
 							(instr('$salesman',a.code) > 0 or instr('$salesman',a.name) > 0)
 						limit 1
 				";
+var_dump($sql);
 				$row = Yii::app()->db->createCommand($sql)->queryRow();
 				if ($row!==false) $rtn[] = $row['user_id'];
 			}
