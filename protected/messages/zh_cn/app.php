@@ -97,5 +97,25 @@ return array(
 	'Transaction Type'=>'交易类别',
 	'Account'=>'账户',
 	'Delegation'=>'授权',
+
+	'Sales segment query'=>'销售段位查询',
+	'Sales segment details query'=>'销售段位明细查询',
+    'Sales history segment query'=>'销售历史段位查询',
+    'Total rank score'=>'销售段位总分榜',
+	'Sales Rank'=>'销售段位设置',
+	'Sales Turnover'=>'销售成交率报表',
+	'Sales segment coefficient'=>'销售段位系数设置',
+	'Sales points other settings'=>'销售积分其他设置',
+    'Sales points other settings List'=>'销售积分其他设置列表',
+    'Sales points other settings Form'=>'销售积分其他设置表单',
+
+    'Redeem'=>'积分',
+	'Redeem index'=>'积分兌換',
+    'Redeem list'=>'积分兌換列表',
+	'Redeem prize list'=>'积分兌換奖项列表',
+
+	//沈超添加
+	'Sales Search Customer'=>'销售客户查询',
+	'Sales Search Count'=>'销售客户查询统计',
 );
 ?>
