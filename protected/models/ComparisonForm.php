@@ -103,6 +103,8 @@ class ComparisonForm extends CFormModel
         $rows = array_merge($serviceRows,$serviceRowsID);
         if(!empty($rows)){
             foreach ($rows as $row){
+                $row["region"] = self::strUnsetNumber($row["region"]);
+                $row["region_name"] = self::strUnsetNumber($row["region_name"]);
                 $row["amt_paid"] = is_numeric($row["amt_paid"])?floatval($row["amt_paid"]):0;
                 $row["ctrt_period"] = is_numeric($row["ctrt_period"])?floatval($row["ctrt_period"]):0;
                 $row["b4_amt_paid"] = is_numeric($row["b4_amt_paid"])?floatval($row["b4_amt_paid"]):0;
@@ -118,6 +120,20 @@ class ComparisonForm extends CFormModel
         return true;
     }
 
+	public static function strUnsetNumber($str){
+	    if(!empty($str)){
+            $arr = str_split($str,1);
+            foreach ($arr as $key=>$value){
+                if(is_numeric($value)){
+                    unset($arr[$key]);
+                }
+            }
+            return implode("",$arr);
+        }else{
+	        return "none";
+        }
+    }
+	
     private function insertUServiceData($startDate,&$data){
         $year = date("Y",strtotime($startDate));
         $month = date("n",strtotime($startDate));
@@ -147,7 +163,8 @@ class ComparisonForm extends CFormModel
             ->queryAll();
         if($rows){
             foreach ($rows as $row){
-                $city = $row["Text"];
+                $city = self::resetCity($row["Text"]);
+                //$city = $row["Text"];
                 $money = empty($row["TermCount"])?0:floatval($row["Fee"])/floatval($row["TermCount"]);
                 if(key_exists($city,$data)){
                     $data[$city]["u_actual_money"]+=$money;
@@ -156,6 +173,17 @@ class ComparisonForm extends CFormModel
         }
         return $list;
     }
+	
+	//轉換U系統的城市（國際版專用）
+	public static function resetCity($city){
+		switch($city){
+			case "KL":
+				return "MY";
+			case "SL":
+				return "MY";
+		}
+		return $city;
+	}
 
     private function insertUData($startDate,$endDate,&$data){
         $year = intval($startDate);//服务的年份
@@ -163,7 +191,8 @@ class ComparisonForm extends CFormModel
         if($json["message"]==="Success"){
             $jsonData = $json["data"];
             foreach ($jsonData as $row){
-                $city = $row["city"];
+                $city = self::resetCity($row["city"]);
+                //$city = $row["city"];
                 $money = is_numeric($row["invoice_amt"])?floatval($row["invoice_amt"]):0;
                 if(key_exists($city,$data)){
                     if($year==$this->comparison_year){
