@@ -60,10 +60,10 @@ class SalesMinController extends Controller
     }
 
 	public function actionTestU(){
-        $year = date("Y");
-        $month = date("n");
-        echo "Year:{$year}<br/>Month:{$month}<br/><br/>";
-        $json = Invoice::getActualAmount($year,$month);
+        $startDate = "2023/05/01";
+        $endDate = "2023/05/17";
+        echo "startDate:{$startDate}<br/>endDate:{$endDate}<br/><br/>";
+        $json = Invoice::getInvData($startDate,$endDate);
         var_dump($json);
 	    Yii::app()->end();
     }
