@@ -104,8 +104,6 @@ class ComparisonForm extends CFormModel
         $citySetList = self::getCitySetList();
         if(!empty($rows)){
             foreach ($rows as $row){
-                $row["region"] = self::strUnsetNumber($row["region"]);
-                $row["region_name"] = self::strUnsetNumber($row["region_name"]);
                 $row["amt_paid"] = is_numeric($row["amt_paid"])?floatval($row["amt_paid"]):0;
                 $row["ctrt_period"] = is_numeric($row["ctrt_period"])?floatval($row["ctrt_period"]):0;
                 $row["b4_amt_paid"] = is_numeric($row["b4_amt_paid"])?floatval($row["b4_amt_paid"]):0;
